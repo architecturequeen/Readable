@@ -8,8 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import createPost from './actions';
 import './styles/surface/surface_styles.css';
-
-
+import CreatePost from './CreatePost';
 
 const App = ({ store }) => (
   <Provider store={store}>
@@ -27,15 +26,5 @@ App.propTypes = {
 };
 
 const Home = () => (<b> This is a Home Page. <Link to="/createpost" > Create a Post</Link></b>);
-
-let CreatePost = ({dispatch}) => (<p> Fancy creating a blog post? Do it here! 
-  <Link to="/" >Back To Main Page</Link>
-  <button onClick={() => {
-    dispatch(createPost('New postttt'));
-  } } > 
-    Create Post 
-    </button></p>);
-
-CreatePost = connect()(CreatePost)
 
 export default App;
